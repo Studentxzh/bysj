@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>教材详情 - 校园二手教材平台</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <header class="app-header">
+    <div class="app-logo" onclick="location.href='index.html'" style="cursor:pointer;">校园二手教材平台</div>
+    <div class="app-header-right">
+      <button class="btn btn-ghost" onclick="location.href='profile.html'">个人中心</button>
+      <button class="btn btn-ghost" onclick="location.href='index.html'">返回列表</button>
+    </div>
+  </header>
+  <main class="app-main">
+    <div class="detail-layout" id="detailRoot">
+      <div class="detail-left">
+        <img id="detailCover" class="detail-cover" src="https://via.placeholder.com/360x220?text=Loading..." alt="封面">
+      </div>
+      <div class="detail-right">
+        <h1 id="detailTitle" class="detail-title">加载中...</h1>
+        <div id="detailMeta" class="detail-meta"></div>
+        <div id="detailPrice" class="detail-price"></div>
+        <div id="detailExtra" class="detail-extra"></div>
+        <div id="detailContact" class="detail-extra"></div>
+        <div id="buySaleWrap" style="display:none;margin-bottom:12px;">
+          <div class="detail-desc-title" style="margin-bottom:8px;">交易</div>
+          <button type="button" id="btnBuySale" class="btn btn-primary">立即购买</button>
+          <p id="buySaleOwnerNote" class="detail-hint" style="display:none;"></p>
+          <p id="buySaleHint" class="detail-hint"></p>
+        </div>
+        <div style="margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;">
+          <button id="btnEdit" class="btn btn-primary" style="display:none;">编辑信息</button>
+          <button id="btnMarkSold" class="btn btn-ghost" style="display:none;">标记为已售出</button>
+          <button id="btnMarkBorrowed" class="btn btn-ghost" style="display:none;">标记为已出借</button>
+          <button id="btnMarkOff" class="btn btn-ghost" style="display:none;">下架（不再展示）</button>
+          <button id="btnDelete" class="btn btn-danger" style="display:none;">彻底删除</button>
+        </div>
+        <div class="detail-desc-block">
+          <div class="detail-desc-title">教材说明</div>
+          <p id="detailDesc" class="detail-desc"></p>
+        </div>
+        <div id="editPanel" class="detail-desc-block" style="display:none;margin-top:14px;">
+          <div class="detail-desc-title">编辑教材信息</div>
+          <form id="editBookForm">
+            <div class="form-field">
+              <label for="editTitle">书名</label>
+              <input id="editTitle" name="title" required>
+            </div>
+            <div class="form-field">
+              <label for="editAuthor">作者</label>
+              <input id="editAuthor" name="author">
+            </div>
+            <div class="form-field">
+              <label for="editPublisher">出版社</label>
+              <input id="editPublisher" name="publisher">
+            </div>
+            <div class="form-field">
+              <label for="editPublishYear">出版年份/版次</label>
+              <input id="editPublishYear" name="publishYear">
+            </div>
+            <div class="form-field">
+              <label for="editCourseName">适用课程</label>
+              <input id="editCourseName" name="courseName">
+            </div>
+            <div class="form-field">
+              <label for="editConditionLevel">新旧程度</label>
+              <input id="editConditionLevel" name="conditionLevel">
+            </div>
+            <div class="form-field">
+              <label for="editTransferType">流转类型</label>
+              <select id="editTransferType" name="transferType">
+                <option value="SALE">出售</option>
+                <option value="FREE">免费赠送</option>
+                <option value="BORROW">只借不卖</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="editPrice">价格（元，仅出售时填写）</label>
+              <input id="editPrice" name="price" type="number" step="0.01" min="0">
+            </div>
+            <div class="form-field">
+              <label for="editCoverFile">上传封面（可选）</label>
+              <input id="editCoverFile" name="coverFile" type="file" accept="image/*">
+            </div>
+            <div class="form-field">
+              <label for="editDescription">描述说明</label>
+              <textarea id="editDescription" name="description" rows="3" style="width:100%;padding:9px 10px;border-radius:8px;border:1px solid #cbd5e1;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">保存修改</button>
+            <span id="editBookMsg" class="profile-msg"></span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="assets/app.js?v=4"></script>
+</body>
+</html>
+
