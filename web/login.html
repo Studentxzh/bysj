@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>登录 - 校园二手教材平台</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="auth-container">
+  <div class="auth-card auth-card-login">
+    <div class="auth-title">登录</div>
+    <div class="auth-subtitle">基于 SpringBoot + MyBatis 的校园二手教材循环利用平台</div>
+
+    <form id="loginForm">
+      <div class="form-field">
+        <label for="username">学号 / 账号</label>
+        <input id="username" name="username" autocomplete="username">
+      </div>
+      <div class="form-field">
+        <label for="password">密码</label>
+        <input id="password" name="password" type="password" autocomplete="current-password">
+      </div>
+      <div class="form-field">
+        <label for="role">登录角色</label>
+        <select id="role" name="role">
+          <option value="student">学生用户</option>
+          <option value="admin">管理员</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;margin-top:6px;">登录</button>
+      <div class="form-footer">
+        <span id="loginMessage"></span>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
+
